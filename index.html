@@ -82,23 +82,27 @@
     <main class="page-main">
       <div class="hero-section">
         <img
+          id="image-hero-1"
           class="slideImgs"
           src="images/mobile/mobile-image-hero-1.jpg"
           alt="Hero image 1"
         />
         <img
+          id="image-hero-2"
           class="slideImgs"
           src="images/mobile/mobile-image-hero-2.jpg"
           alt="Hero image 2"
         />
         <img
+          id="image-hero-3"
           class="slideImgs"
           src="images/mobile/mobile-image-hero-3.jpg"
           alt="Hero image 3"
         />
-        <div class="slide-btn-wrapper">
+        <div class="slide-btn-wrapper grid">
           <svg
-            class="slide-left"
+            class="slide-btn cursor"
+            onclick="changeSlideIndex(-1)"
             width="14"
             height="24"
             xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +115,8 @@
             />
           </svg>
           <svg
-            class="slide-right"
+            class="slide-btn cursor"
+            onclick="changeSlideIndex(1)"
             width="14"
             height="24"
             xmlns="http://www.w3.org/2000/svg"
@@ -126,16 +131,16 @@
         </div>
       </div>
       <article class="main-info-section">
-        <article class="info-article">
-          <h1 class="main-info-header">Discover innovative ways to decorate</h1>
-          <p class="main-info-text">
+        <article class="info-article flex flex-column justify-center">
+          <h1 class="info-header">Discover innovative ways to decorate</h1>
+          <p class="info-text">
             We provide unmatched quality, comfort, and style for property owners
             across the country. Our experts combine form and function in
             bringing your vision to life. Create a room in your own style with
             our collection and make your property a reflection of you and what
             you love.
           </p>
-          <div class="shop-now-btn">
+          <div class="shop-now-btn flex align-center cursor">
             <button type="button">Shop now</button>
             <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -146,17 +151,15 @@
             </svg>
           </div>
         </article>
-        <article class="info-article">
-          <h1 class="main-info-header">
-            We are available all across the globe
-          </h1>
-          <p class="main-info-text">
+        <article class="info-article flex flex-column">
+          <h1 class="info-header">We are available all across the globe</h1>
+          <p class="info-text">
             With stores all over the world, it's easy for you to find furniture
             for your home or place of business. Locally, we’re in most major
             cities throughout the country. Find the branch nearest you using our
             store locator. Any questions? Don't hesitate to contact us today.
           </p>
-          <div class="shop-now-btn">
+          <div class="shop-now-btn flex align-center cursor">
             <button type="button">Shop now</button>
             <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -167,16 +170,16 @@
             </svg>
           </div>
         </article>
-        <article class="info-article">
-          <h1 class="main-info-header">Manufactured with the best materials</h1>
-          <p class="main-info-text">
+        <article class="info-article flex flex-column">
+          <h1 class="info-header">Manufactured with the best materials</h1>
+          <p class="info-text">
             Our modern furniture store provide a high level of quality. Our
             company has invested in advanced technology to ensure that every
             product is made as perfect and as consistent as possible. With three
             decades of experience in this industry, we understand what customers
             want for their home and office.
           </p>
-          <div class="shop-now-btn">
+          <div class="shop-now-btn flex align-center cursor">
             <button type="button">Shop now</button>
             <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -188,10 +191,10 @@
           </div>
         </article>
       </article>
-      <div class="about-image-wrapper">
+      <div class="about-image-wrapper dark">
         <img src="images/image-about-dark.jpg" alt="Image about dark" />
       </div>
-      <section class="about-section">
+      <section class="about-section flex flex-column justify-center">
         <h2 class="about-header">About our furniture</h2>
         <p class="about-text">
           Our multifunctional collection blends design and function to suit your
@@ -202,7 +205,7 @@
           dream space.
         </p>
       </section>
-      <div class="about-image-wrapper">
+      <div class="about-image-wrapper light">
         <img src="images/image-about-light.jpg" alt="Image about light" />
       </div>
     </main>

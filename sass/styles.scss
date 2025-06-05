@@ -1,3 +1,5 @@
+$hero-imgs: hero-1, hero-2, hero-3;
+
 $font: 'League Spartan', sans-serif;
 
 $white: hsl(0, 100%, 100%);
@@ -32,11 +34,24 @@ $black: hsl(0, 0%, 0%);
   font-weight: 600;
 }
 
+@mixin text-style($color, $size, $weight){
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+  margin-block: 0;
+}
+
 body{
   margin: 0;
   font-size: 1em;
   font-family: $font;
   position: relative;
+  background-color: $white;
+}
+
+img{
+  width: 100%;
+  object-fit: fill;
 }
 
 .grid{
@@ -68,9 +83,9 @@ body{
 }
 
 .page-navi-wrapper{
+  z-index: 5;
   @include navi;
-  padding-block: 3em;
-  padding-inline: 1.5em;
+  padding: 3em 1.5em;
   grid-template-columns: repeat(3, auto);
   @include breakpoint(desktop){
     display: flex;
@@ -108,13 +123,13 @@ body{
 }
 
 #navi-mobile-wrapper{
+  z-index: 10;
   @include navi;
   bottom: 0;
   background-color: rgba($color: $black, $alpha: 0.5);
   .navi-mobile-container{
     background-color: $white;
-    padding-block: 3em;
-    padding-inline: 1.5em;
+    padding: 3em 1.5em;
     column-gap: 4em;
 
     .navi-mobile{
@@ -122,6 +137,125 @@ body{
       .navi-mobile-link{
         @include navi-link($black);
       }
+    }
+  }
+}
+
+.page-main {
+  .hero-section{
+    position: relative;
+
+    .slide-btn-wrapper{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: $black;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2.5em;
+      padding: 1em 1.4em;
+
+      .slide-btn{
+        scale: 0.8;
+        justify-self: center;
+      }
+    }
+
+    @include breakpoint(tablet){
+      @each $img in $hero-imgs{
+        #image-#{$img}{
+          content: url('../images/desktop/desktop-image-#{$img}.jpg');
+        }
+      }
+    }
+  }
+
+  .main-info-section{
+    .info-article{
+      padding: 4em 2em;
+      row-gap: 1em;
+
+      .info-header{
+        @include text-style($black, 2.4em, 600);
+        letter-spacing: -2px;
+      }
+
+      .info-text{
+        @include text-style($grey-500, 0.9em, 500);
+        line-height: 1.5;
+      }
+
+      .shop-now-btn{
+        margin-block-start: 1.5em;
+        column-gap: 1em;
+        &>*{
+          cursor: pointer;
+        }
+        button{
+          border: none;
+          background-color: transparent;
+          font-family: $font;
+          text-transform: uppercase;
+          letter-spacing: 11px;
+          @include text-style($black, 1em, 600);
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .about-section{
+    padding: 3em 2em 2.5em;
+    row-gap: 1em;
+
+    .about-header{
+      @include text-style($black, 0.9em, 700);
+      text-transform: uppercase;
+      letter-spacing: 5px;
+    }
+
+    .about-text{
+      @include text-style($grey-500, 0.9em, 500);
+      line-height: 1.5;
+    }
+  }
+
+  @include breakpoint(desktop){
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+    .hero-section{
+      grid-area: 1 / 1 / 2 / 7;
+
+      .slide-btn-wrapper{
+        right: calc(-1 * 100% / 6);
+        width: calc(100% / 6 - 1.4em *2);
+        .slide-btn{
+          scale: 1;
+        }
+      }
+    }
+
+    .main-info-section{
+      grid-area: 1 / 7 / 2 / 11;
+
+      .info-article{
+        // padding-inline: 5em;
+      }
+    }
+
+    .dark{
+      grid-area: 2 / 1 / 3 / 4;
+    }
+
+    .about-section{
+      grid-area: 2 / 4 / 3 / 8;
+    }
+
+    .light{
+      grid-area: 2 / 8 / 3 / 11;
     }
   }
 }
