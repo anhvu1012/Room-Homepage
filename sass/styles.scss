@@ -185,7 +185,7 @@ img{
       }
 
       .shop-now-btn{
-        margin-block-start: 1.5em;
+        margin-block-start: 1em;
         column-gap: 1em;
         &>*{
           cursor: pointer;
@@ -219,6 +219,14 @@ img{
     }
   }
 
+  @include breakpoint(tablet){
+    .main-info-section{
+      .info-article{
+        padding-inline: 4em;
+      }
+    }
+  }
+
   @include breakpoint(desktop){
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -226,12 +234,17 @@ img{
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 
+    img{
+      height: 100%;
+    }
+
     .hero-section{
       grid-area: 1 / 1 / 2 / 7;
 
       .slide-btn-wrapper{
         right: calc(-1 * 100% / 6);
         width: calc(100% / 6 - 1.4em *2);
+        padding-block: 1.8em;
         .slide-btn{
           scale: 1;
         }
@@ -242,7 +255,11 @@ img{
       grid-area: 1 / 7 / 2 / 11;
 
       .info-article{
-        // padding-inline: 5em;
+        padding: 8em 6em;
+      }
+
+      .info-header{
+        font-size: 3em !important;
       }
     }
 
@@ -252,6 +269,7 @@ img{
 
     .about-section{
       grid-area: 2 / 4 / 3 / 8;
+      padding: 4.5em 3.5em;
     }
 
     .light{
