@@ -165,12 +165,20 @@ img{
       right: 0;
       background-color: $black;
       grid-template-columns: repeat(2, 1fr);
-      column-gap: 2.5em;
-      padding: 1em 1.4em;
 
-      .slide-btn{
-        scale: 0.8;
-        justify-self: center;
+      div{
+        padding: 1em 1.4em;
+        background-color: $black;
+        text-align: center;
+
+        .slide-btn{
+          scale: 0.8;
+          justify-self: center;
+        }
+
+        &:hover{
+          background-color: $grey-800;
+        }
       }
     }
 
@@ -212,6 +220,17 @@ img{
           letter-spacing: 11px;
           @include text-style($black, 1em, 600);
           padding: 0;
+        }
+
+        &:hover{
+          button{
+            color: $grey-500;
+          }
+          svg{
+            path{
+              fill: $grey-500;
+            }
+          }
         }
       }
     }
@@ -257,10 +276,12 @@ img{
 
       .slide-btn-wrapper{
         right: calc(-1 * 100% / 6);
-        width: calc(100% / 6 - 1.4em *2);
-        padding-block: 1.8em;
-        .slide-btn{
-          scale: 1;
+        width: calc(100% / 6 );
+        div{
+          padding-block: 1.5em;
+          .slide-btn{
+            scale: 0.9;
+          }
         }
       }
     }
