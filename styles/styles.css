@@ -1,3 +1,11 @@
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
 body {
   margin: 0;
   font-size: 1em;
@@ -37,6 +45,11 @@ img {
 
 .cursor {
   cursor: pointer;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
 .page-navi-wrapper {
@@ -109,6 +122,9 @@ img {
 
 .page-main .hero-section {
   position: relative;
+}
+.page-main .hero-section .slideImgs {
+  transition: display 0.3s ease;
 }
 .page-main .hero-section .slide-btn-wrapper {
   position: absolute;
