@@ -159,14 +159,14 @@ img{
       transition: display 0.3s ease;
     }
 
-    .slide-btn-wrapper{
+    .slide-btn-container{
       position: absolute;
       bottom: 0;
       right: 0;
       background-color: $black;
       grid-template-columns: repeat(2, 1fr);
 
-      div{
+      .slide-btn-wrapper{
         padding: 1em 1.4em;
         background-color: $black;
         text-align: center;
@@ -274,10 +274,10 @@ img{
     .hero-section{
       grid-area: 1 / 1 / 2 / 7;
 
-      .slide-btn-wrapper{
+      .slide-btn-container{
         right: calc(-1 * 100% / 6);
         width: calc(100% / 6 );
-        div{
+        .slide-btn-wrapper{
           padding-block: 1.5em;
           .slide-btn{
             scale: 0.9;

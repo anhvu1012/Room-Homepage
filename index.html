@@ -99,11 +99,10 @@
           src="images/mobile/mobile-image-hero-3.jpg"
           alt="Hero image 3"
         />
-        <div class="slide-btn-wrapper grid cursor">
-          <div>
+        <div class="slide-btn-container grid cursor">
+          <div class="slide-btn-wrapper cursor" onclick="changeSlideIndex(-1)">
             <svg
               class="slide-btn"
-              onclick="changeSlideIndex(-1)"
               width="14"
               height="24"
               xmlns="http://www.w3.org/2000/svg"
@@ -116,10 +115,9 @@
               />
             </svg>
           </div>
-          <div>
+          <div class="slide-btn-wrapper cursor" onclick="changeSlideIndex(+1)">
             <svg
               class="slide-btn"
-              onclick="changeSlideIndex(1)"
               width="14"
               height="24"
               xmlns="http://www.w3.org/2000/svg"
